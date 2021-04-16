@@ -1,0 +1,12 @@
+<config>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 1 )'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 2 )'/>	
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 4 )'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 8 )'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 16 )'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 32 )'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 64 )'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ;1234 > 1234( MATCH 128 )'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ; * > 1000'/>
+	<filterrule content='DROP ; 10.0.0.1/32 > 10.0.0.5/32 ; (Type=8, Code=0)'/>	
+</config>

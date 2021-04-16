@@ -1,0 +1,1188 @@
+version 2
+run TestAll-0-20210316-15:54:16-3832
+attr configname TestAll
+attr datetime 20210316-15:54:16
+attr experiment TestAll
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TestBot
+attr processid 3832
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.bot.numPktGen 10
+param *.bot.pg[*].destAddr "\"recvhost\""
+param *.bot.pg[*].localPort 1234
+param *.bot.pg[*].destPort 1234
+param *.bot.pg[*].sendInterval 0.01ms
+param *.bot.pg[0].packetType "\"TCP_FIN\""
+param *.bot.pg[0].packetName "\"FINFlood\""
+param *.bot.pg[1].packetType "\"TCP_SYN\""
+param *.bot.pg[1].packetName "\"SYNFlood\""
+param *.bot.pg[2].packetType "\"TCP_RST\""
+param *.bot.pg[2].packetName "\"RSTFlood\""
+param *.bot.pg[3].packetType "\"TCP_PSH\""
+param *.bot.pg[3].packetName "\"PSHFlood\""
+param *.bot.pg[4].packetType "\"TCP_ACK\""
+param *.bot.pg[4].packetName "\"ACKFlood\""
+param *.bot.pg[5].packetType "\"TCP_URG\""
+param *.bot.pg[5].packetName "\"URGFlood\""
+param *.bot.pg[6].packetType "\"TCP_ECE\""
+param *.bot.pg[6].packetName "\"ECEFlood\""
+param *.bot.pg[7].packetType "\"TCP_CWR\""
+param *.bot.pg[7].packetName "\"CWRFlood\""
+param *.bot.pg[8].packetType "\"UDP\""
+param *.bot.pg[8].packetName "\"UDPFlood\""
+param *.bot.pg[8].packetLength 500
+param *.bot.pg[9].packetName "\"ICMPFlood\""
+param *.bot.pg[9].packetType "\"ICMP\""
+param **.crcMode "\"computed\""
+param **.fcsMode "\"computed\""
+param *.router.numPcapRecorders 1
+param *.router.pcapRecorder[*].pcapFile "\"results/router.pcap\""
+param *.visualizer.*.interfaceTableVisualizer.displayInterfaceTables true
+param *.visualizer.*.packetDropVisualizer.displayPacketDrops true
+param *.visualizer.*.packetDropVisualizer.packetFilter "\"not arp*\""
+param *.visualizer.*.packetDropVisualizer.labelFormat "\"%n/reason: %r\""
+param *.visualizer.*.packetDropVisualizer.fadeOutTime 3s
+
+scalar TestBot.bot.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TestBot.bot.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TestBot.bot.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TestBot.bot.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac.queue packetPopped:count 7
+attr interpolationmode none
+attr title "packet popped, count"
+scalar TestBot.bot.eth[0].mac.queue packetPopped:sum(packetBytes) 448
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic TestBot.bot.eth[0].mac.queue queueingTime:histogram
+field count 7
+field mean 1.44e-005
+field stddev 1.3116096980428e-005
+field min 0
+field max 3.36e-005
+field sum 0.0001008
+field sqrsum 2.483712e-009
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	2
+bin	5e-007	0
+bin	1e-006	0
+bin	1.5e-006	0
+bin	2e-006	0
+bin	2.5e-006	0
+bin	3e-006	0
+bin	3.5e-006	0
+bin	4e-006	0
+bin	4.5e-006	0
+bin	5e-006	0
+bin	5.5e-006	0
+bin	6e-006	0
+bin	6.5e-006	1
+bin	7e-006	0
+bin	7.5e-006	0
+bin	8e-006	0
+bin	8.5e-006	0
+bin	9e-006	0
+bin	9.5e-006	0
+bin	1e-005	0
+bin	1.05e-005	0
+bin	1.1e-005	0
+bin	1.15e-005	0
+bin	1.2e-005	0
+bin	1.25e-005	0
+bin	1.3e-005	1
+bin	1.35e-005	0
+bin	1.4e-005	0
+bin	1.45e-005	0
+bin	1.5e-005	0
+bin	1.55e-005	0
+bin	1.6e-005	0
+bin	1.65e-005	0
+bin	1.7e-005	0
+bin	1.75e-005	0
+bin	1.8e-005	0
+bin	1.85e-005	0
+bin	1.9e-005	0
+bin	1.95e-005	0
+bin	2e-005	1
+bin	2.05e-005	0
+bin	2.1e-005	0
+bin	2.15e-005	0
+bin	2.2e-005	0
+bin	2.25e-005	0
+bin	2.3e-005	0
+bin	2.35e-005	0
+bin	2.4e-005	0
+bin	2.45e-005	0
+bin	2.5e-005	0
+bin	2.55e-005	0
+bin	2.6e-005	0
+bin	2.65e-005	1
+bin	2.7e-005	0
+bin	2.75e-005	0
+bin	2.8e-005	0
+bin	2.85e-005	0
+bin	2.9e-005	0
+bin	2.95e-005	0
+bin	3e-005	0
+bin	3.05e-005	0
+bin	3.1e-005	0
+bin	3.15e-005	0
+bin	3.2e-005	0
+bin	3.25e-005	0
+bin	3.3e-005	0
+bin	3.35e-005	1
+bin	3.4e-005	0
+bin	3.45e-005	0
+bin	3.5e-005	0
+bin	3.55e-005	0
+bin	3.6e-005	0
+bin	3.65e-005	0
+bin	3.7e-005	0
+bin	3.75e-005	0
+bin	3.8e-005	0
+bin	3.85e-005	0
+bin	3.9e-005	0
+bin	3.95e-005	0
+bin	4e-005	0
+bin	4.05e-005	0
+bin	4.1e-005	0
+bin	4.15e-005	0
+bin	4.2e-005	0
+scalar TestBot.bot.eth[0].mac.queue queueLength:max 45
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar TestBot.bot.eth[0].mac.queue queueLength:timeavg 23.686641075399
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar TestBot.bot.eth[0].mac.queue packetPushed:count 51
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar TestBot.bot.eth[0].mac.queue packetPushed:sum(packetBytes) 12944
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar TestBot.bot.eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar TestBot.bot.eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac "simulated time" 5.735209e-005
+scalar TestBot.bot.eth[0].mac full-duplex 1
+scalar TestBot.bot.eth[0].mac "frames/sec sent" 104616.93723803
+scalar TestBot.bot.eth[0].mac "frames/sec rcvd" 34872.312412678
+scalar TestBot.bot.eth[0].mac "bits/sec sent" 53563871.865873
+scalar TestBot.bot.eth[0].mac "bits/sec rcvd" 17854623.955291
+scalar TestBot.bot.eth[0].mac "rx channel idle (%)" 100
+scalar TestBot.bot.eth[0].mac "rx channel utilization (%)" 0
+scalar TestBot.bot.eth[0].mac txPk:count 6
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar TestBot.bot.eth[0].mac txPk:sum(packetBytes) 384
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac packetReceivedFromUpper:count 51
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar TestBot.bot.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 12686
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TestBot.bot.eth[0].mac passedUpPk:sum(packetBytes) 128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar TestBot.bot.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar TestBot.bot.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar TestBot.bot.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar TestBot.bot.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar TestBot.bot.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar TestBot.bot.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar TestBot.bot.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar TestBot.bot.eth[0].mac rxPkOk:count 2
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar TestBot.bot.eth[0].mac rxPkOk:sum(packetBytes) 128
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar TestBot.bot.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar TestBot.bot.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar TestBot.bot.eth[0].encap decapPk:count 2
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar TestBot.bot.eth[0].encap decapPk:sum(packetBytes) 92
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar TestBot.bot.eth[0].encap encapPk:count 51
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar TestBot.bot.eth[0].encap encapPk:sum(packetBytes) 11768
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar TestBot.bot.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar TestBot.bot.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar TestBot.bot.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar TestBot.bot.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar TestBot.bot.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar TestBot.bot.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar TestBot.bot.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar TestBot.bot.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar TestBot.bot.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar TestBot.bot.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar TestBot.bot.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar TestBot.bot.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar TestBot.bot.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar TestBot.bot.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar TestBot.bot.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar TestBot.bot.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar TestBot.bot.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar TestBot.bot.ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar TestBot.bot.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar TestBot.bot.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar TestBot.bot.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar TestBot.bot.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar TestBot.bot.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar TestBot.bot.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar TestBot.bot.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar TestBot.bot.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar TestBot.recvhost.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TestBot.recvhost.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TestBot.recvhost.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TestBot.recvhost.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac.queue packetPopped:count 3
+attr interpolationmode none
+attr title "packet popped, count"
+scalar TestBot.recvhost.eth[0].mac.queue packetPopped:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic TestBot.recvhost.eth[0].mac.queue queueingTime:histogram
+field count 3
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	3
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar TestBot.recvhost.eth[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar TestBot.recvhost.eth[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar TestBot.recvhost.eth[0].mac.queue packetPushed:count 3
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar TestBot.recvhost.eth[0].mac.queue packetPushed:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar TestBot.recvhost.eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar TestBot.recvhost.eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac "simulated time" 5.735209e-005
+scalar TestBot.recvhost.eth[0].mac full-duplex 1
+scalar TestBot.recvhost.eth[0].mac "frames/sec sent" 52308.468619016
+scalar TestBot.recvhost.eth[0].mac "frames/sec rcvd" 52308.468619016
+scalar TestBot.recvhost.eth[0].mac "bits/sec sent" 26781935.932936
+scalar TestBot.recvhost.eth[0].mac "bits/sec rcvd" 26781935.932936
+scalar TestBot.recvhost.eth[0].mac "rx channel idle (%)" 100
+scalar TestBot.recvhost.eth[0].mac "rx channel utilization (%)" 0
+scalar TestBot.recvhost.eth[0].mac txPk:count 3
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar TestBot.recvhost.eth[0].mac txPk:sum(packetBytes) 192
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac packetReceivedFromUpper:count 3
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar TestBot.recvhost.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 162
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac passedUpPk:count 3
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TestBot.recvhost.eth[0].mac passedUpPk:sum(packetBytes) 192
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar TestBot.recvhost.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar TestBot.recvhost.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar TestBot.recvhost.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar TestBot.recvhost.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar TestBot.recvhost.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar TestBot.recvhost.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar TestBot.recvhost.eth[0].mac rxPkOk:count 3
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar TestBot.recvhost.eth[0].mac rxPkOk:sum(packetBytes) 192
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar TestBot.recvhost.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar TestBot.recvhost.eth[0].encap decapPk:count 3
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar TestBot.recvhost.eth[0].encap decapPk:sum(packetBytes) 138
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar TestBot.recvhost.eth[0].encap encapPk:count 3
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar TestBot.recvhost.eth[0].encap encapPk:sum(packetBytes) 108
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar TestBot.recvhost.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar TestBot.recvhost.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar TestBot.recvhost.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar TestBot.recvhost.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar TestBot.recvhost.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar TestBot.recvhost.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.arp arpReplySent:count 1
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar TestBot.recvhost.ipv4.arp arpReplySent:sum(packetBytes) 28
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar TestBot.recvhost.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar TestBot.recvhost.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar TestBot.recvhost.ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar TestBot.recvhost.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar TestBot.recvhost.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar TestBot.recvhost.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar TestBot.recvhost.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar TestBot.recvhost.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar TestBot.recvhost.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar TestBot.recvhost.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar TestBot.recvhost.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar TestBot.router.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar TestBot.router.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar TestBot.router.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TestBot.router.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac.queue packetPopped:count 2
+attr interpolationmode none
+attr title "packet popped, count"
+scalar TestBot.router.eth[0].mac.queue packetPopped:sum(packetBytes) 128
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic TestBot.router.eth[0].mac.queue queueingTime:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar TestBot.router.eth[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar TestBot.router.eth[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar TestBot.router.eth[0].mac.queue packetPushed:count 2
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar TestBot.router.eth[0].mac.queue packetPushed:sum(packetBytes) 128
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar TestBot.router.eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar TestBot.router.eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac "simulated time" 5.735209e-005
+scalar TestBot.router.eth[0].mac full-duplex 1
+scalar TestBot.router.eth[0].mac "frames/sec sent" 34872.312412678
+scalar TestBot.router.eth[0].mac "frames/sec rcvd" 104616.93723803
+scalar TestBot.router.eth[0].mac "bits/sec sent" 17854623.955291
+scalar TestBot.router.eth[0].mac "bits/sec rcvd" 53563871.865873
+scalar TestBot.router.eth[0].mac "rx channel idle (%)" 100
+scalar TestBot.router.eth[0].mac "rx channel utilization (%)" 0
+scalar TestBot.router.eth[0].mac txPk:count 2
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar TestBot.router.eth[0].mac txPk:sum(packetBytes) 128
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac packetReceivedFromUpper:count 2
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar TestBot.router.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 104
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac passedUpPk:count 6
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TestBot.router.eth[0].mac passedUpPk:sum(packetBytes) 384
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar TestBot.router.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar TestBot.router.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar TestBot.router.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar TestBot.router.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar TestBot.router.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar TestBot.router.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar TestBot.router.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar TestBot.router.eth[0].mac rxPkOk:count 6
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar TestBot.router.eth[0].mac rxPkOk:sum(packetBytes) 384
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar TestBot.router.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar TestBot.router.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar TestBot.router.eth[0].encap decapPk:count 6
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar TestBot.router.eth[0].encap decapPk:sum(packetBytes) 276
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar TestBot.router.eth[0].encap encapPk:count 2
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar TestBot.router.eth[0].encap encapPk:sum(packetBytes) 68
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac.queue packetPopped:count 4
+attr interpolationmode none
+attr title "packet popped, count"
+scalar TestBot.router.eth[1].mac.queue packetPopped:sum(packetBytes) 256
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic TestBot.router.eth[1].mac.queue queueingTime:histogram
+field count 4
+field mean 4.585e-006
+field stddev 5.6596201285952e-006
+field min 0
+field max 1.162e-005
+field sum 1.834e-005
+field sqrsum 1.801828e-010
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	2
+bin	2e-007	0
+bin	4e-007	0
+bin	6e-007	0
+bin	8e-007	0
+bin	1e-006	0
+bin	1.2e-006	0
+bin	1.4e-006	0
+bin	1.6e-006	0
+bin	1.8e-006	0
+bin	2e-006	0
+bin	2.2e-006	0
+bin	2.4e-006	0
+bin	2.6e-006	0
+bin	2.8e-006	0
+bin	3e-006	0
+bin	3.2e-006	0
+bin	3.4e-006	0
+bin	3.6e-006	0
+bin	3.8e-006	0
+bin	4e-006	0
+bin	4.2e-006	0
+bin	4.4e-006	0
+bin	4.6e-006	0
+bin	4.8e-006	0
+bin	5e-006	0
+bin	5.2e-006	0
+bin	5.4e-006	0
+bin	5.6e-006	0
+bin	5.8e-006	0
+bin	6e-006	0
+bin	6.2e-006	0
+bin	6.4e-006	0
+bin	6.6e-006	1
+bin	6.8e-006	0
+bin	7e-006	0
+bin	7.2e-006	0
+bin	7.4e-006	0
+bin	7.6e-006	0
+bin	7.8e-006	0
+bin	8e-006	0
+bin	8.2e-006	0
+bin	8.4e-006	0
+bin	8.6e-006	0
+bin	8.8e-006	0
+bin	9e-006	0
+bin	9.2e-006	0
+bin	9.4e-006	0
+bin	9.6e-006	0
+bin	9.8e-006	0
+bin	1e-005	0
+bin	1.02e-005	0
+bin	1.04e-005	0
+bin	1.06e-005	0
+bin	1.08e-005	0
+bin	1.1e-005	0
+bin	1.12e-005	0
+bin	1.14e-005	0
+bin	1.16e-005	1
+bin	1.18e-005	0
+bin	1.2e-005	0
+bin	1.22e-005	0
+bin	1.24e-005	0
+bin	1.26e-005	0
+bin	1.28e-005	0
+bin	1.3e-005	0
+bin	1.32e-005	0
+bin	1.34e-005	0
+bin	1.36e-005	0
+bin	1.38e-005	0
+bin	1.4e-005	0
+bin	1.42e-005	0
+bin	1.44e-005	0
+bin	1.46e-005	0
+scalar TestBot.router.eth[1].mac.queue queueLength:max 2
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar TestBot.router.eth[1].mac.queue queueLength:timeavg 1.0408424010489
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar TestBot.router.eth[1].mac.queue packetPushed:count 6
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar TestBot.router.eth[1].mac.queue packetPushed:sum(packetBytes) 384
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar TestBot.router.eth[1].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar TestBot.router.eth[1].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac "simulated time" 5.735209e-005
+scalar TestBot.router.eth[1].mac full-duplex 1
+scalar TestBot.router.eth[1].mac "frames/sec sent" 52308.468619016
+scalar TestBot.router.eth[1].mac "frames/sec rcvd" 34872.312412678
+scalar TestBot.router.eth[1].mac "bits/sec sent" 26781935.932936
+scalar TestBot.router.eth[1].mac "bits/sec rcvd" 17854623.955291
+scalar TestBot.router.eth[1].mac "rx channel idle (%)" 100
+scalar TestBot.router.eth[1].mac "rx channel utilization (%)" 0
+scalar TestBot.router.eth[1].mac txPk:count 3
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar TestBot.router.eth[1].mac txPk:sum(packetBytes) 192
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac packetReceivedFromUpper:count 6
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar TestBot.router.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 336
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar TestBot.router.eth[1].mac passedUpPk:sum(packetBytes) 128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar TestBot.router.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar TestBot.router.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar TestBot.router.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar TestBot.router.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar TestBot.router.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar TestBot.router.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar TestBot.router.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar TestBot.router.eth[1].mac rxPkOk:count 2
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar TestBot.router.eth[1].mac rxPkOk:sum(packetBytes) 128
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar TestBot.router.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar TestBot.router.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar TestBot.router.eth[1].encap decapPk:count 2
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar TestBot.router.eth[1].encap decapPk:sum(packetBytes) 92
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar TestBot.router.eth[1].encap encapPk:count 6
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar TestBot.router.eth[1].encap encapPk:sum(packetBytes) 228
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar TestBot.router.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar TestBot.router.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar TestBot.router.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar TestBot.router.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar TestBot.router.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar TestBot.router.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar TestBot.router.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar TestBot.router.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar TestBot.router.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar TestBot.router.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar TestBot.router.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar TestBot.router.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar TestBot.router.ipv4.arp arpReplySent:count 1
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar TestBot.router.ipv4.arp arpReplySent:sum(packetBytes) 28
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar TestBot.router.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar TestBot.router.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar TestBot.router.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar TestBot.router.ipv4.arp arpResolutionCompleted:count 2
+attr title "ARP completed resolutions, count"
+scalar TestBot.router.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+
